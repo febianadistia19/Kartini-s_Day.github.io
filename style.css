@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #f8d7da, #f5e6d3);
+  color: #4b2e2e;
+  font-family: "Times New Roman", serif;
+}
+
+nav {
+  background: #d8a48f;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #b07d62;
+}
+
+.hero {
+  min-height: 100vh;
+  text-align: center;
+  padding: 120px 20px;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("img/ra\ kartini.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero img {
+  width: 500px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  background: #c06c84;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-buttons a:hover {
+  background: #a85a70;
+}
+
+.row-dua {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Biar dua-duanya bagi rata */
+#lagu,
+#quotes {
+  flex: 1;
+}
+
+/* Responsive (biar HP tetap ke bawah) */
+@media (max-width: 768px) {
+  .row-dua {
+    flex-direction: column;
+  }
+}
+
+#quotes p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+#quotes {
+  overflow: visible;
+}
+
+#sejarah p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+#sejarah {
+  text-align: justify;
+}
+
+.bio-list {
+  padding-left: 20px;
+}
+
+.bio-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.about p {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.about,
+.upload-section,
+.photo-card {
+  background: #fff8f8;
+  border: 2px solid #e7c6b6;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about,
+.upload-section {
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.about h2,
+.upload-section h2,
+.gallery-title {
+  color: #b56576;
+  margin-bottom: 15px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.photo-card {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.photo-card:hover {
+  transform: translateY(-8px);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.photo-card p {
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+#lagu p {
+  line-height: 1.8;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  background: #d8a48f;
+  color: white;
+}
