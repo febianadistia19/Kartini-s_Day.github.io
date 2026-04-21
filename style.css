@@ -221,3 +221,90 @@ footer {
   background: #d8a48f;
   color: white;
 }
+
+/* Laptop kecil */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+
+  /* Navbar turun ke bawah */
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero lebih kecil */
+  .hero {
+    padding: 80px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Container lebih rapat */
+  .container {
+    width: 95%;
+  }
+
+  /* Row jadi ke bawah */
+  .row-dua {
+    flex-direction: column;
+  }
+
+  /* Gallery lebih kecil */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .photo-card img {
+    height: 150px;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+  html {
+    font-size: 80%;
+  }
+
+  /* Hero lebih compact */
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Navbar lebih kecil */
+  nav a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  /* Card padding dikurangi */
+  .about,
+  .upload-section {
+    padding: 20px;
+  }
+
+  /* Gambar lebih kecil */
+  .photo-card img {
+    height: 130px;
+  }
+}
