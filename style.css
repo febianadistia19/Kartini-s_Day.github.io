@@ -12,14 +12,14 @@ body {
 
 nav {
   background: #d8a48f;
-  padding: 15px 40px;
+  padding: 15px 7%;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   position: relative;
@@ -33,7 +33,10 @@ nav a {
   border-radius: 30px;
   transition: 0.3s;
 }
-
+.navbar-nav a {
+  display: inline-block;
+  margin: 0 1rem;
+}
 nav a:hover {
   background: #b07d62;
 }
@@ -41,6 +44,11 @@ nav a:hover {
 .nav-menu {
   display: flex;
   gap: 25px;
+  align-items: center;
+}
+
+.navbar-extra {
+  display: flex;
   align-items: center;
 }
 
@@ -59,8 +67,8 @@ login-trigger {
 }
 
 .login-btn {
-  position: absolute;
-  right: 40px;
+  position: static;
+  margin-right: 15px;
 
   text-decoration: none;
   background: white;
@@ -348,52 +356,34 @@ footer {
 
 /* Tablet */
 @media (max-width: 768px) {
-  html {
-    font-size: 85%;
-  }
-
   #hamburger-menu {
     display: inline-block;
+    color: white;
   }
 
-  /* Navbar turun ke bawah */
-  nav {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  nav a {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-
-  /* Hero lebih kecil */
-  .hero {
-    padding: 80px 15px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  /* Container lebih rapat */
-  .container {
-    width: 95%;
-  }
-
-  /* Row jadi ke bawah */
-  .row-dua {
+  .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%; /* Sembunyi di kanan luar layar */
+    background-color: #d8a48f;
+    width: 250px; /* Lebar menu saat terbuka */
+    height: 100vh;
+    display: flex;
     flex-direction: column;
+    transition: 0.3s;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   }
 
-  /* Gallery lebih kecil */
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  .navbar-nav.active {
+    right: 0; /* Muncul ke layar */
   }
 
-  .photo-card img {
-    height: 150px;
+  .navbar-nav a {
+    color: white;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
