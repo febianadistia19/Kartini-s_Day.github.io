@@ -148,6 +148,10 @@ button:hover {
   font-weight: 600;
 }
 
+#hamburger-menu {
+  display: none;
+}
+
 .hero {
   min-height: 100vh;
   text-align: center;
@@ -346,6 +350,10 @@ footer {
 @media (max-width: 768px) {
   html {
     font-size: 85%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
   }
 
   /* Navbar turun ke bawah */
