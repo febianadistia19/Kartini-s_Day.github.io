@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Kartini's Day</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -14,7 +15,43 @@
       <a href="#lagu">Lirik Lagu</a>
       <a href="#quotes">Quotes</a>
       <a href="#gallery">Gallery</a>
+
+      <a href="javascript:void(0)" class="login-btn" id="login-btn">Login</a>
     </nav>
+
+    <div id="login-overlay"></div>
+
+    <div id="login" class="login-container">
+      <span
+        id="close-login"
+        style="
+          position: absolute;
+          right: 20px;
+          top: 10px;
+          cursor: pointer;
+          font-size: 24px;
+        "
+        >&times;</span
+      >
+
+      <h1>Login</h1>
+
+      <form>
+        <div class="input-box">
+          <label>Username</label>
+          <input type="text" placeholder="Masukkan username" required />
+        </div>
+
+        <div class="input-box">
+          <label>Password</label>
+          <input type="password" placeholder="Masukkan password" required />
+        </div>
+
+        <button type="submit">Masuk</button>
+      </form>
+
+      <a href="javascript:void(0)" class="back-btn">← Kembali ke Home</a>
+    </div>
 
     <section id="home" class="hero">
       <h1>Happy Kartini's Day</h1>
@@ -230,5 +267,34 @@
     <footer>
       <p>Website Hari Kartini By Febian Adistia © 2026</p>
     </footer>
+
+    <script>
+      const loginBtn = document.getElementById("login-btn");
+      const loginContainer = document.getElementById("login");
+      const loginOverlay = document.getElementById("login-overlay");
+      const closeBtn = document.getElementById("close-login");
+      const backBtn = document.querySelector(".back-btn");
+
+      // Fungsi untuk membuka login
+      loginBtn.addEventListener("click", () => {
+        loginContainer.classList.add("active");
+        loginOverlay.classList.add("active");
+      });
+
+      // Fungsi untuk menutup login (Klik overlay)
+      loginOverlay.addEventListener("click", () => {
+        loginContainer.classList.remove("active");
+        loginOverlay.classList.remove("active");
+      });
+
+      // Fungsi untuk menutup login (Klik tombol silang atau kembali)
+      [closeBtn, backBtn].forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          loginContainer.classList.remove("active");
+          loginOverlay.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
