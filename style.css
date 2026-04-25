@@ -352,6 +352,9 @@ footer {
 
 /* Tablet */
 @media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .navbar-nav {
     position: absolute;
     top: 100%;
