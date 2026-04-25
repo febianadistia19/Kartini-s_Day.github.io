@@ -29,7 +29,7 @@ nav a {
   text-decoration: none;
   color: white;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 3rem;
   border-radius: 30px;
   transition: 0.3s;
 }
@@ -358,66 +358,92 @@ footer {
 
 /* Tablet */
 @media (max-width: 768px) {
-  .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%; /* Sembunyi di kanan luar layar */
-    background-color: #d8a48f;
-    width: 250px; /* Lebar menu saat terbuka */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
   }
 
-  .navbar-nav.active {
-    right: 0; /* Muncul ke layar */
+  nav a {
+    font-size: 14px;
+    padding: 8px 14px;
   }
 
-  .navbar-nav a {
-    color: white;
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .container {
-    padding: 10px;
-  }
-}
-
-/* HP kecil */
-@media (max-width: 480px) {
-  html {
-    font-size: 80%;
-  }
-
-  /* Hero lebih compact */
   .hero {
-    padding: 60px 10px;
+    min-height: 80vh;
+    padding: 80px 20px;
+    align-items: center;
+    text-align: center;
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-top: 20px;
   }
 
-  /* Navbar lebih kecil */
-  nav a {
-    font-size: 0.8rem;
-    padding: 6px 10px;
+  .hero p {
+    font-size: 1rem;
+    max-width: 100%;
   }
 
-  /* Card padding dikurangi */
+  .hero-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-buttons a {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
   .about,
   .upload-section {
     padding: 20px;
   }
 
-  /* Gambar lebih kecil */
-  .photo-card img {
-    height: 130px;
+  .about h2,
+  .upload-section h2,
+  .gallery-title {
+    font-size: 1.6rem;
   }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .photo-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .photo-card img {
+    height: 180px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+/* Navbar lebih kecil */
+nav a {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+/* Card padding dikurangi */
+.about,
+.upload-section {
+  padding: 20px;
+}
+
+/* Gambar lebih kecil */
+.photo-card img {
+  height: 130px;
 }
