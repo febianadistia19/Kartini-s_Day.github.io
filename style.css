@@ -12,8 +12,8 @@ body {
 
 nav {
   background: #d8a48f;
-  padding: 15px 7%;
-  position: sticky;
+  padding: 1rem 7%;
+  position: center;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -28,14 +28,14 @@ nav {
 nav a {
   text-decoration: none;
   color: white;
-  font-weight: 600;
-  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 1.1rem;
   border-radius: 30px;
   transition: 0.3s;
 }
 .navbar-nav a {
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 nav a:hover {
   background: #b07d62;
@@ -43,12 +43,7 @@ nav a:hover {
 
 .nav-menu {
   display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.navbar-extra {
-  display: flex;
+  gap: 10px;
   align-items: center;
 }
 
@@ -154,10 +149,6 @@ button:hover {
   text-decoration: none;
   color: #b56576;
   font-weight: 600;
-}
-
-#hamburger-menu {
-  display: none;
 }
 
 .hero {
@@ -356,11 +347,6 @@ footer {
 
 /* Tablet */
 @media (max-width: 768px) {
-  #hamburger-menu {
-    display: inline-block;
-    color: white;
-  }
-
   .navbar-nav {
     position: absolute;
     top: 100%;
