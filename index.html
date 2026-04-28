@@ -6,52 +6,111 @@
     <title>Happy Kartini's Day</title>
     <title>Login Form</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#sejarah">Sejarah</a>
-      <a href="#biografi"> Biografi</a>
-      <a href="#lagu">Lirik Lagu</a>
-      <a href="#quotes">Quotes</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#sejarah">Sejarah</a>
+        <a href="#biografi">Biografi</a>
+        <a href="#lagu">Lirik Lagu</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#gallery">Gallery</a>
+      </div>
 
-      <a href="javascript:void(0)" class="login-btn" id="login-btn">Login</a>
+      <div class="navbar-extra">
+        <a href="#" id="login-btn" class="login-btn">Login</a>
+      </div>
     </nav>
 
-    <div id="login-overlay"></div>
-
     <div id="login" class="login-container">
-      <span
-        id="close-login"
-        style="
-          position: absolute;
-          right: 20px;
-          top: 10px;
-          cursor: pointer;
-          font-size: 24px;
-        "
-        >&times;</span
-      >
+      <span id="close-login">&times;</span>
 
       <h1>Login</h1>
 
-      <form>
-        <div class="input-box">
-          <label>Username</label>
-          <input type="text" placeholder="Masukkan username" required />
-        </div>
+      <div class="input-box">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Masukkan username" />
+      </div>
 
-        <div class="input-box">
-          <label>Password</label>
-          <input type="password" placeholder="Masukkan password" required />
-        </div>
+      <div class="input-box">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Masukkan password" />
+      </div>
 
-        <button type="submit">Masuk</button>
-      </form>
+      <button type="button" onclick="handleLogin()">Masuk</button>
 
-      <a href="javascript:void(0)" class="back-btn">← Kembali ke Home</a>
+      <p>
+        Belum punya akun?
+        <span onclick="switchToRegister()" style="color: blue; cursor: pointer">
+          Daftar
+        </span>
+      </p>
+
+      <a href="#" class="back-btn" id="back-home">← Kembali ke Home</a>
     </div>
+
+    <script>
+      function switchToRegister() {
+        alert("Fitur daftar aktif!");
+      }
+    </script>
+
+    <script>
+      function handleLogin() {
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+
+        const savedUser = localStorage.getItem("username");
+        const savedPass = localStorage.getItem("password");
+
+        if (!savedUser) {
+          alert("Kamu belum daftar!");
+          return;
+        }
+
+        if (user !== savedUser) {
+          alert("Username salah!");
+          return;
+        }
+
+        if (pass !== savedPass) {
+          alert("Password salah!");
+          return;
+        }
+
+        alert("Login berhasil!");
+      }
+    </script>
+
+    <script>
+      function switchToRegister() {
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+
+        if (!user || !pass) {
+          alert("Isi dulu username & password!");
+          return;
+        }
+
+        localStorage.setItem("username", user);
+        localStorage.setItem("password", pass);
+
+        alert("Berhasil daftar!");
+      }
+    </script>
+
+    <script>
+      const backHome = document.getElementById("back-home");
+
+      backHome.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginContainer.classList.remove("active");
+        loginOverlay.classList.remove("active");
+      });
+    </script>
 
     <section id="home" class="hero">
       <h1>Happy Kartini's Day</h1>
@@ -132,6 +191,49 @@
       </section>
 
       <div class="row-dua">
+        <section class="upload-section" id="lagu">
+
+          <p>Lagu Nasional Ibu Kita Kartini:</p>
+          <iframe
+            width="350"
+            height="200"
+            src="https://www.youtube.com/embed/R1-2M34Tq4M?si=-eL-DMws397CKB-J"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe
+          ><br />
+
+          <p>Kisah tokoh Kartini:</p>
+          <iframe
+            width="350"
+            height="200"
+            src="https://www.youtube.com/embed/Tdvus1BUJig?si=DB1jGEePAk7OkKKV"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </section>
         <section class="upload-section" id="lagu">
           <h2>Lirik Lagu Ibu Kita Kartini</h2>
           <p>
@@ -269,6 +371,22 @@
     </footer>
 
     <script>
+      const navbarNav = document.querySelector(".navbar-nav");
+      const hamburger = document.querySelector("#hamburger-menu");
+
+      hamburger.addEventListener("click", function (e) {
+        e.preventDefault();
+        navbarNav.classList.toggle("active");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+          navbarNav.classList.remove("active");
+        }
+      });
+    </script>
+
+    <script>
       const loginBtn = document.getElementById("login-btn");
       const loginContainer = document.getElementById("login");
       const loginOverlay = document.getElementById("login-overlay");
@@ -288,13 +406,24 @@
       });
 
       // Fungsi untuk menutup login (Klik tombol silang atau kembali)
-      [closeBtn, backBtn].forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          loginContainer.classList.remove("active");
-          loginOverlay.classList.remove("active");
-        });
+      closeBtn.addEventListener("click", () => {
+        loginContainer.classList.remove("active");
+        loginOverlay.classList.remove("active");
+      });
+
+      backBtn.addEventListener("click", () => {
+        loginContainer.classList.remove("active");
+        loginOverlay.classList.remove("active");
       });
     </script>
+
+    <script>
+      feather.replace();
+    </script>
+
+    <!--My Javascript-->
+    <script src="js/script.js"></script>
   </body>
+
+  <div id="login-overlay"></div>
 </html>
