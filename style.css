@@ -8,6 +8,7 @@ body {
   background: linear-gradient(to bottom, #f8d7da, #f5e6d3);
   color: #4b2e2e;
   font-family: "Times New Roman", serif;
+  background-image: url(img/bunga\ bg.jpg);
 }
 
 nav {
@@ -346,7 +347,7 @@ button:hover {
 }
 
 .photo-card {
-  width: 270px;
+  width: 200px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
@@ -372,6 +373,229 @@ button:hover {
 
 #lagu p {
   line-height: 1.8;
+}
+
+/* REFLEKSI */
+
+.biodata {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 30px;
+  max-width: 750px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Times New Roman", serif;
+  border: 2px solid #e7c6b6;
+}
+
+.biodata h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #b07c6e;
+  margin-bottom: 30px;
+}
+
+/* layout kiri kanan */
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* FOTO */
+.bio-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #f5d6cc;
+}
+
+/* DATA */
+.bio-data {
+  flex: 1;
+}
+
+/* tiap baris */
+.item {
+  display: grid;
+  grid-template-columns: 30px 100px 10px auto;
+  font-size: 14px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #d8a48f;
+}
+
+/* icon */
+.icon {
+  font-size: 18px;
+}
+
+/* titik dua */
+.titik {
+  text-align: center;
+}
+
+/* teks */
+.item p {
+  margin: 0;
+}
+
+.card h2 {
+  color: #b37878;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.bio-text p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.feedback-card {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+
+  background: #fff8f8;
+  border-radius: 25px;
+  border: 2px solid #e7c6b6;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.feedback-card h2 {
+  color: #b37878;
+  text-align: center;
+}
+
+.rating span {
+  font-size: 32px;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.rating span.active {
+  color: gold;
+}
+
+.rating span:hover {
+  color: gold;
+  transform: scale(1.2);
+}
+
+textarea {
+  width: 100%;
+  height: 110px;
+  margin-top: 15px;
+  padding: 12px;
+
+  border-radius: 12px;
+  border: 2px solid #e7c6b6;
+  outline: none;
+
+  font-family: inherit;
+}
+
+textarea:focus {
+  border-color: #d8a48f;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+
+  border-radius: 30px;
+  background: #d8a48f;
+  color: white;
+  border: none;
+
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b07d62;
+  transform: translateY(-2px);
+}
+
+.quiz {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 650px;
+  margin: 40px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: "Times New Roman", serif;
+  border: 2px solid #e7c6b6;
+}
+
+.quiz h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #b37878;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* biar pilihan lebih rapi */
+.question label {
+  display: block;
+  background: #fff5f2;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* efek hover */
+.question label:hover {
+  background: #f3d6c9;
+}
+
+/* radio button agak diberi jarak */
+.question input {
+  margin-right: 8px;
+}
+
+/* tombol */
+.quiz button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #d8a48f;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* efek hover tombol */
+.quiz button:hover {
+  background: #c48d78;
+}
+
+/* hasil skor */
+#hasil {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #4b2e2e;
 }
 
 footer {
@@ -487,6 +711,17 @@ footer {
   .navbar-nav a {
     display: block;
     margin: 10px 0;
+  }
+
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .item {
+    grid-template-columns: 1fr;
+    text-align: left;
+    border-bottom: none;
   }
 }
 /* Card padding dikurangi */

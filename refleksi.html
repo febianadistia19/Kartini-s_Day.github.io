@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery Kartini</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+
+   <section class="biodata">
+  <h2>Biodata Penulis</h2>
+
+  <div class="bio-container">
+    <div class="bio-img">
+      <img src="img/febi.jpeg" alt="Foto">
+    </div>
+
+    <!-- DATA -->
+    <div class="bio-data">
+
+      <div class="item">
+        <span class="icon">👤</span>
+        <b>Nama</b>
+        <span class="titik">:</span>
+        <p>Febian Adistia Saputri</p>
+      </div>
+
+      <div class="item">
+        <span class="icon">🎓</span>
+        <b>Kelas</b>
+        <span class="titik">:</span>
+        <p>X RPL 2</p>
+      </div>
+
+      <div class="item">
+        <span class="icon">🏫</span>
+        <b>Sekolah</b>
+        <span class="titik">:</span>
+        <p>SMKN 24 JAKARTA</p>
+      </div>
+
+      <div class="item">
+        <span class="icon">📧</span>
+        <b>Email</b>
+        <span class="titik">:</span>
+        <p>febianadistia19@gmail.com</p>
+      </div>
+
+      <div class="item">
+        <span class="icon">❤️</span>
+        <b>Motivasi</b>
+        <span class="titik">:</span>
+        <p>Ingin mengenalkan perjuangan Kartini kepada generasi muda</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+    </div>
+
+    <section class="quiz">
+  <h2>Kuis Refleksi</h2>
+
+  <div class="question">
+    <p>1. Siapakah tokoh emansipasi wanita di Indonesia?</p>
+    <label><input type="radio" name="q1" value="a"> RA Kartini</label><br>
+    <label><input type="radio" name="q1" value="b"> Cut Nyak Dien</label><br>
+    <label><input type="radio" name="q1" value="c"> Martha Christina</label>
+  </div>
+
+  <div class="question">
+    <p>2. Kapan Hari Kartini diperingati?</p>
+    <label><input type="radio" name="q2" value="a"> 21 April</label><br>
+    <label><input type="radio" name="q2" value="b"> 17 Agustus</label><br>
+    <label><input type="radio" name="q2" value="c"> 1 Juni</label>
+  </div>
+
+  <div class="question">
+    <p>3. RA Kartini berasal dari daerah?</p>
+    <label><input type="radio" name="q3" value="a"> Bandung</label><br>
+    <label><input type="radio" name="q3" value="b"> Jepara</label><br>
+    <label><input type="radio" name="q3" value="c"> Surabaya</label>
+  </div>
+
+  <div class="question">
+    <p>4. Buku kumpulan surat Kartini berjudul?</p>
+    <label><input type="radio" name="q4" value="a"> Habis Gelap Terbitlah Terang</label><br>
+    <label><input type="radio" name="q4" value="b"> Laskar Pelangi</label><br>
+    <label><input type="radio" name="q4" value="c"> Bumi Manusia</label>
+  </div>
+
+  <div class="question">
+    <p>5. Apa yang diperjuangkan Kartini?</p>
+    <label><input type="radio" name="q5" value="a"> Kemerdekaan</label><br>
+    <label><input type="radio" name="q5" value="b"> Emansipasi wanita</label><br>
+    <label><input type="radio" name="q5" value="c"> Teknologi</label>
+  </div>
+
+  <button onclick="cekJawaban()">Submit</button>
+
+  <p id="hasil"></p>
+</section>
+
+<script>
+function cekJawaban() {
+  let skor = 0;
+
+  let q1 = document.querySelector('input[name="q1"]:checked');
+  let q2 = document.querySelector('input[name="q2"]:checked');
+  let q3 = document.querySelector('input[name="q3"]:checked');
+  let q4 = document.querySelector('input[name="q4"]:checked');
+  let q5 = document.querySelector('input[name="q5"]:checked');
+
+  if (!q1 || !q2 || !q3 || !q4 || !q5) {
+    document.getElementById("hasil").innerText = "Isi semua jawaban dulu ya!";
+    return;
+  }
+
+  if (q1.value === "a") skor++;
+  if (q2.value === "a") skor++;
+  if (q3.value === "b") skor++;
+  if (q4.value === "a") skor++;
+  if (q5.value === "b") skor++;
+
+  document.getElementById("hasil").innerText = "Skor kamu: " + skor + " dari 5";
+}
+
+if (skor === 5) {
+  hasil.innerText = "Perfect! 🎉";
+} else if (skor >= 3) {
+  hasil.innerText = "Lumayan bagus 👍";
+} else {
+  hasil.innerText = "Coba lagi ya 💪";
+}
+</script>
+
+    <div class="feedback-card">
+      <h2>Penilaian & Saran</h2>
+
+      <!-- Rating -->
+      <label>Rating:</label>
+      <div class="rating">
+        <span onclick="setRating(1)">★</span>
+        <span onclick="setRating(2)">★</span>
+        <span onclick="setRating(3)">★</span>
+        <span onclick="setRating(4)">★</span>
+        <span onclick="setRating(5)">★</span>
+      </div>
+
+      <!-- Saran -->
+      <textarea id="saran" placeholder="Tulis saran kamu di sini..."></textarea>
+
+      <!-- Tombol -->
+      <button onclick="kirimFeedback()">Kirim</button>
+
+      <p id="hasil"></p>
+    </div>
+
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+let rating = 0;
+
+function setRating(n) {
+  rating = n;
+  const stars = document.querySelectorAll(".rating span");
+
+  stars.forEach((star, index) => {
+    if (index < n) {
+      star.classList.add("active");
+    } else {
+      star.classList.remove("active");
+    }
+  });
+}
+</script>
+
+  </body>
+  </body>
+</html>
