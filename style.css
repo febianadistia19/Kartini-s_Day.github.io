@@ -714,14 +714,38 @@ footer {
   }
 
   .bio-container {
-    flex-direction: column;
+    flex-direction: column; /* dari samping → jadi atas bawah */
+    align-items: center;
     text-align: center;
   }
 
+  .bio-img img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .bio-data {
+    width: 100%;
+  }
+
+  /* UBAH GRID JADI SIMPLE */
   .item {
-    grid-template-columns: 1fr;
+    display: block; /* ini kunci biar gak pecah */
     text-align: left;
-    border-bottom: none;
+    border-bottom: 1px dashed #d8a48f;
+    padding-bottom: 10px;
+  }
+
+  .item b {
+    display: inline;
+  }
+
+  .titik {
+    display: none; /* hilangkan ":" biar gak aneh */
+  }
+
+  .item p {
+    margin-top: 5px;
   }
 }
 /* Card padding dikurangi */
